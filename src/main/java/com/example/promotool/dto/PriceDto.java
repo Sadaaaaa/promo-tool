@@ -1,6 +1,5 @@
 package com.example.promotool.dto;
 
-import com.example.promotool.model.Products;
 import lombok.Builder;
 import lombok.Data;
 

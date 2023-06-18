@@ -1,10 +1,7 @@
 package com.example.promotool.model;
 
-import lombok.Builder;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 @Data

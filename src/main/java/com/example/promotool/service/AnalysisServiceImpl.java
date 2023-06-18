@@ -5,7 +5,6 @@ import com.example.promotool.dto.ActualMapper;
 import com.example.promotool.dto.ActualPromoDto;
 import com.example.promotool.dto.RequestDto;
 import com.example.promotool.model.Actuals;
-import com.example.promotool.model.ActualsProjection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

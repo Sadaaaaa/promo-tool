@@ -26,7 +26,7 @@ public class FinanceController {
 
     @GetMapping
     public ResponseEntity<?> getPrice(@RequestParam(value = "chain", required = false) String chain,
-                             @RequestParam(value = "materialId", required = false) Integer materialId) {
+                                      @RequestParam(value = "materialId", required = false) Integer materialId) {
         return ResponseEntity.ok(financeService.getPrice(chain, materialId));
     }
 
@@ -47,7 +47,7 @@ public class FinanceController {
 
     @DeleteMapping
     public void deletePrice(@RequestParam(value = "chain", required = false) String chain,
-                                      @RequestParam(value = "materialId", required = false) Integer materialId) {
+                            @RequestParam(value = "materialId", required = false) Integer materialId) {
         financeService.deletePrice(chain, materialId);
     }
 }
