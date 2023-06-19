@@ -1,6 +1,7 @@
 package com.example.promotool.service;
 
 import com.example.promotool.dao.ActualsRepository;
+import com.example.promotool.dto.ActualByDaysDto;
 import com.example.promotool.dto.ActualMapper;
 import com.example.promotool.dto.ActualPromoDto;
 import com.example.promotool.dto.RequestDto;
@@ -30,8 +31,9 @@ public class AnalysisServiceImpl implements AnalysisService {
     }
 
     @Override
-    public Object getFactsByDay(RequestDto requestDto) {
-        return actualsRepository.findAllByChainInAndMaterialIdIn(requestDto.getChains(), requestDto.getMaterialIds());
+    public List<ActualByDaysDto> getFactsByDay(RequestDto requestDto) {
+        List<Actuals> actuals = actualsRepository.findAllByChainInAndMaterialIdIn(requestDto.getChains(), requestDto.getMaterialIds());
+        return actuals.stream().map(ActualMapper::toActualByDaysDto).collect(Collectors.toList());
     }
 
 

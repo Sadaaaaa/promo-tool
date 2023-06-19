@@ -1,6 +1,8 @@
 package com.example.promotool.dto;
 
+import com.example.promotool.model.Actuals;
 import com.example.promotool.model.ActualsProjection;
+import com.example.promotool.model.Customers;
 
 import java.util.List;
 
@@ -23,6 +25,20 @@ public class ActualMapper {
                 "June", "July", "August", "September", "October", "November", "December");
 
         return months.get(number - 1);
+    }
+
+    public static ActualByDaysDto toActualByDaysDto(Actuals actuals) {
+        return ActualByDaysDto.builder()
+                .date(actuals.getDate())
+                .materialId(actuals.getMaterialId())
+                .shipToCode(actuals.getShipToCode())
+                .chain(actuals.getChain())
+                .volumeUnits(actuals.getVolumeUnits())
+                .actualSalesValue(actuals.getActualSalesValue())
+                .promo(actuals.getPromo())
+                .customer(actuals.getCustomer())
+                .products(actuals.getProducts())
+                .build();
     }
 
 }

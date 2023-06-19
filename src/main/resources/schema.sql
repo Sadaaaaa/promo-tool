@@ -7,10 +7,10 @@ CREATE TABLE IF NOT EXISTS actuals
     chain_name         varchar(255),
     volume_units       integer,
     actual_sales_value float,
-    promo              varchar(255),
+    promo              varchar(255)
 
-    constraint actuals_fk foreign key (material_no, chain_name) references price (material_no, chain_name),
-    constraint actuals_fk_prod foreign key (material_no) references products (material_id)
+--     constraint actuals_fk foreign key (material_no, chain_name) references price (material_no, chain_name),
+--     constraint actuals_fk_prod foreign key (material_no) references products (material_id)
 );
 
 CREATE TABLE IF NOT EXISTS products
@@ -40,3 +40,6 @@ CREATE TABLE IF NOT EXISTS price
 
     constraint price_pk primary key (chain_name, material_no)
 );
+
+alter table actuals add foreign key (material_no, chain_name) references price (material_no, chain_name) on delete cascade;
+alter table actuals add foreign key (material_no) references products (material_id) on delete cascade;
